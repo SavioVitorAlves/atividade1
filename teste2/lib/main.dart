@@ -35,25 +35,19 @@ class _MyHomePageState extends State<MyHomePage> {
   String _resposnse = 'Adicione Numeros!';
 
   void _incrementCounter() {
-    if(_counter == 20){
-      setState(() {
-        _resposnse = 'Limite Maximo!';
-      });
-    }else{
-      setState(() {
-
-        _counter++;
-      });
-    }
+    setState(() {
+      _counter == 20 ? _resposnse = 'Limite Maximo!' : _counter++;
+    });
   }
   void _decrementCounter() {
-    if(_counter < 1){
+    if(_counter <= 1){
       setState(() {
         _counter = 0;
-      });
-    }else{
-      setState(() {
         _resposnse = 'Adicione Numeros!';
+      });
+    }
+    else{
+      setState(() {
         _counter--;
       });
     }
@@ -66,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
         Positioned.fill(
           child: Image.asset(
-            'assets/imgs/fundo.jpeg',
+            'assets/imgs/img01.jpg',
             fit: BoxFit.cover, // Faz a imagem cobrir todo o fundo
           ),
         ),
